@@ -485,23 +485,34 @@ body
     display: block
 
   .menu__btn
-    position: relative
-    display: block
+    display: flex
+    flex-direction: column
+    justify-content: space-between
     width: 35px
-    height: 24px
+    height: 35px
+    background-color: transparent
     border: none
     cursor: pointer
-    border-top: 2px solid #fefefe
-    border-bottom: 1px solid#fefefe
-    background-color: transparent
-  .menu__btn::before
-    position: absolute
-    content: ''
-    width: 35px
-    height: 2px
-    left: 0
-    top: 9px
-    background-color: #fefefe
+    padding: 5px 0
+
+  .item-btn
+    display: block
+    width: 100%
+    height: 1px
+    color: #ddd
+    background-color: #fff
+    transition: all 0.5s
+  .menu__btn--active
+
+    justify-content: center
+  .menu__btn--active .item-btn:nth-child(2)
+    display: none
+  .menu__btn--active .item-btn:nth-child(1)
+    transition: all 0.5s
+    transform: rotate(45deg)
+  .menu__btn--active .item-btn:nth-child(3)
+    transition: all 0.5s
+    transform: rotate(-45deg)
 
   .rent__item
     margin: 30px
